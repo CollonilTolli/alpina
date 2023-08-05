@@ -1,0 +1,28 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxtjs/style-resources": "^1.2.1",
+    "@types/node": "^18.17.1",
+    "nuxt": "^3.6.5",
+    "sass": "^1.64.2",
+    "sass-loader": "10.1.1"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^3.11.0",
+    "@nuxt/image": "^0.7.1",
+    "@nuxt/image-edge": "^1.0.0-rc.1-28180077.d51e794",
+    "@nuxt/kit": "^3.6.5",
+    "nuxt-swiper": "^1.2.0",
+    "sharp": "^0.32.4",
+    "swiper": "8.0.0"
+  }
+}
