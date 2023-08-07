@@ -44,14 +44,14 @@
               </div>
             </div>
             <div class="backgr-image invert-nuxt-img-white">
-              <nuxt-img draggable="false"  src="../assets/images/backg-doc-shield.svg" alt=""/>
+              <img draggable="false"  src="../assets/images/backg-doc-shield.svg" alt=""/>
             </div>
           </div>
         </div>
         <div class="dt_2">
           <div class="block-feedback-phone">
             <template v-if="!isFormPhoneSubmited">
-              <nuxt-img draggable="false"  src="../assets/images/ico-phone-call.svg" alt="phone-call"/>
+              <img draggable="false"  src="../assets/images/ico-phone-call.svg" alt="phone-call"/>
               <div class="div-title">
                 НАЧНЕМ ОБСУЖДЕНИЕ ПРОЕКТА?
               </div>
@@ -84,7 +84,7 @@
                   А если у Вас “горит” и ждать нельзя,<br> скорее звоните нам:
                 </div> -->
                 <div class="text-src">
-                  <nuxt-img width="43" height="43" draggable="false" src="../assets/images/ico-phone-call.svg" alt=""/>
+                  <img width="43" height="43" draggable="false" src="../assets/images/ico-phone-call.svg" alt=""/>
                   <a class="unset-tt link-tel" href="tel:+74822642200" title="Позвонить"> +7 (4822) 64-22-00 </a>
                 </div>
               </div>
@@ -104,9 +104,9 @@ export default {
   data(){
     return{
       isFormPhoneSubmited: false,
-      serviceId: import.meta.env.VITE_APP_SERVICE_ID,
-      templateId: import.meta.env.VITE_APP_TEMPLATE_ONLY_PHONE,
-      publicKey: import.meta.env.VITE_APP_PUBLIC_KEY_MAIL
+      serviceId: this.$config.VITE_APP_SERVICE_ID,
+      templateId: this.$config.VITE_APP_TEMPLATE_ONLY_PHONE,
+      publicKey: this.$config.VITE_APP_PUBLIC_KEY_MAIL
     }
   },
   mounted() {
@@ -114,8 +114,8 @@ export default {
   },
   methods: {
     sendPhone(){
-      const tokenBot = import.meta.env.VUE_APP_TELEGRAM_BOT;
-      const chanelId = import.meta.env.VUE_APP_TELEGRAM_ID_CHANNEL;
+      const tokenBot = this.$config.VUE_APP_TELEGRAM_BOT;
+      const chanelId = this.$config.VUE_APP_TELEGRAM_ID_CHANNEL;
       const URI_API = `https://api.telegram.org/${tokenBot}/sendMessage`;
       const DOC_API = `https://api.telegram.org/${tokenBot}/sendDocument`;
       const formSubmitStatus = (state) => this.isFormPhoneSubmited = state;
@@ -142,7 +142,7 @@ export default {
     },
     sendEmail() {
       document.querySelector('.btn-send-phone').setAttribute('disabled','disabled');
-      emailjs.sendForm( this.serviceId, this.templateId, this.$refs.form, this.publicKey)
+      emailjs.sendForm( "service_c0zud8b","template_vhedcl4", this.$refs.form, "mo6b0vb7q8mQd9Ea4")
           .then((result) => {
             this.isFormPhoneSubmited = true;
             document.querySelector('.btn-send-phone').setAttribute('disabled','disabled');

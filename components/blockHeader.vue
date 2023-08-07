@@ -83,7 +83,7 @@
         <div class="header-cont">
           <div class="div-logo">
             <div class="dt1">
-              <nuxt-img draggable="false" src="../assets/images/logo-head.svg" alt=""/>
+              <img draggable="false" src="../assets/images/logo-head.svg" alt=""/>
             </div>
             <div class="dt2">
               <div class="cont-el">пн-пт: <b>9:00 - 18:00</b></div>
@@ -93,13 +93,13 @@
           <div class="cont-data">
             <div class="div-cont-data">
               <div class="text">
-                <nuxt-img draggable="false"  src="../assets/images/ico-location.svg" alt=""/>
+                <img draggable="false"  src="../assets/images/ico-location.svg" alt=""/>
                 <adress>
                   г. Тверь,  пр-т Чайковского, д.28/2
                 </adress>
               </div>
               <div class="text">
-                <nuxt-img draggable="false"  src="../assets/images/ico-mail-2.svg" alt=""/>
+                <img draggable="false"  src="../assets/images/ico-mail-2.svg" alt=""/>
                 <a class="unset-tt" href="mailto:klimat-tver@yandex.ru" title="Написать">
                   klimat-tver@yandex.ru
                 </a>
@@ -107,7 +107,7 @@
             </div>
             <div class="div-cont-data div-cont-data-2">
               <div class="text">
-                <nuxt-img draggable="false"  src="../assets/images/ico-phone-2.svg" alt=""/>
+                <img draggable="false"  src="../assets/images/ico-phone-2.svg" alt=""/>
                 <a class="unset-tt link-tel" href="tel:+74822642200" title="Позвонить">
                   +7 (4822) 64-22-00
                 </a>

@@ -1124,7 +1124,7 @@ abbr {
           &:before {
             content: "";
             position: relative;
-            background: url("../../../src/assets/images/ico-slider-left.svg") no-repeat center center;
+            background: url("../../assets/images/ico-slider-left.svg") no-repeat center center;
             height: 14px;
             width: 14px;
             display: block;
@@ -1141,7 +1141,7 @@ abbr {
           &:after {
             content: "";
             position: relative;
-            background: url("../../../src/assets/images/ico-slider-right.svg") no-repeat center center;
+            background: url("../../assets/images/ico-slider-right.svg") no-repeat center center;
             height: 14px;
             width: 14px;
             display: block;
@@ -1228,7 +1228,7 @@ abbr {
 }
 
 .swiper-button-next {
-  background: url("../../../src/assets/images/ico-slider-left.svg") no-repeat center center;
+  background: url("../../assets/images/ico-slider-left.svg") no-repeat center center;
   right: 5px !important;
 
   &:after {
@@ -1237,7 +1237,7 @@ abbr {
 }
 
 .swiper-button-prev {
-  background: url("../../../src/assets/images/ico-slider-right.svg") no-repeat center center;
+  background: url("../../assets/images/ico-slider-right.svg") no-repeat center center;
   left: 5px !important;
 
   &:after {

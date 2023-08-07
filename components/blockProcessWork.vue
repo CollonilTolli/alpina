@@ -13,7 +13,7 @@
                 {{ elem.textDesc }}
               </div>
               <div class="desc-img">
-                <nuxt-img draggable="false" :src="elem.sourceImage" alt=""/>
+                <img draggable="false" :src="elem.sourceImage" alt=""/>
               </div>
             </div>
             <div class="sub-desc">

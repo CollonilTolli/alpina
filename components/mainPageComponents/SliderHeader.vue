@@ -24,7 +24,7 @@
                   <div class="elems-slider">
                     <div class="elem">
                       <div class="div-img">
-                        <nuxt-img
+                        <img
                           draggable="false"
                           src="../../assets/images/slider-head/header-slider-1-icon-pencil.svg"
                           alt="icon-pencil"
@@ -34,7 +34,7 @@
                     </div>
                     <div class="elem">
                       <div class="div-img">
-                        <nuxt-img
+                        <img
                           draggable="false"
                           src="../../assets/images/slider-head/header-slider-1-icon-car.svg"
                           alt="icon-pencil"
@@ -44,7 +44,7 @@
                     </div>
                     <div class="elem">
                       <div class="div-img">
-                        <nuxt-img
+                        <img
                           draggable="false"
                           src="../../assets/images/slider-head/header-slider-1-icon-time.svg"
                           alt="icon-pencil"
@@ -54,7 +54,7 @@
                     </div>
                     <div class="elem">
                       <div class="div-img">
-                        <nuxt-img
+                        <img
                           draggable="false"
                           src="../../assets/images/slider-head/header-slider-1-icon-gears.svg"
                           alt="icon-pencil"

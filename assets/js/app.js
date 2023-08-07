@@ -53,13 +53,15 @@ window.addEventListener("DOMContentLoaded", (event) => {
     })
 });
 
-const visuality = localStorage.getItem('visuality') || 'version-row'
-localStorage.setItem('visuality', visuality)
+window.addEventListener("DOMContentLoaded", (event) => {
+
+    const visuality = localStorage.getItem('visuality') || 'version-row'
+    localStorage.setItem('visuality', visuality)
 
 
-const theme = localStorage.getItem('theme-window') || 'dark-theme'
-localStorage.setItem('theme-window', theme)
+    const theme = localStorage.getItem('theme-window') || 'dark-theme'
+    localStorage.setItem('theme-window', theme)
 
-document.querySelector('html').setAttribute('theme', localStorage.getItem('theme-window'))
+    document.querySelector('html').setAttribute('theme', localStorage.getItem('theme-window'))
 
-
+})

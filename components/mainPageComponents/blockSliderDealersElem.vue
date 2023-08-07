@@ -2,7 +2,7 @@
   <div class="block-dealers-elem-slider">
     <div class="d-none">
       <template v-for="elem in projData">
-        <nuxt-img
+        <img
           draggable="false"
           :src="elem.sourceImage"
           alt="Фотография дилера"
@@ -52,7 +52,7 @@
             <div class="dealer-slider">
               <div class="block-elem listener-click" @click="showModal">
                 <div class="div-img">
-                  <nuxt-img
+                  <img
                     draggable="false"
                     :src="elem.sourceImage"
                     alt="Фотография дилера"
@@ -61,7 +61,7 @@
                 <div style="display: none !important">
                   <div class="dataContent">
                     <div class="block-img">
-                      <nuxt-img :src="elem.sourceSrc" alt="" />
+                      <img :src="elem.sourceSrc" alt="" />
                     </div>
                     <div class="block-title">
                       <h1>{{ elem.sourceTitle }}</h1>

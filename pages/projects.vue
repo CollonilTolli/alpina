@@ -4,7 +4,7 @@
       <div class="div-logo">
         <div class="div-img">
           <a href="/">
-            <nuxt-img class="invert-nuxt-img-white" draggable="false" src="../assets/images/footer-text-logo.svg"  alt=""/>
+            <img class="invert-nuxt-img-white" draggable="false" src="../assets/images/footer-text-logo.svg"  alt=""/>
           </a>
         </div>
         <div class="div-desc">
@@ -35,10 +35,10 @@
               <div class="block-elem">
                 <div class="div-img">
                   <template v-if="elem.videoCover">
-                    <nuxt-img draggable="false" :src="elem.videoCover" alt="Фотография обьекта"/>
+                    <img draggable="false" :src="elem.videoCover" alt="Фотография обьекта"/>
                   </template>
                   <template v-else>
-                    <nuxt-img draggable="false" :src="elem.sourceImage[0]" alt="Фотография обьекта"/>
+                    <nuxt-img draggable="false" width="300" height="300" :src="elem.sourceImage[0]" alt="Фотография обьекта"/>
                   </template>
                 </div>
                 <div class="div-data">
@@ -60,14 +60,14 @@
                                   <template v-for="elemImg in elem.sourceImage">
                                     <template v-if="elem.isVideo">
                                       <div class="swiper-slide">
-                                        <video class="fone-video" id="video-source-modal" controls="controls" loop>
+                                        <video class="fone-video" muted id="video-source-modal" controls="controls" loop>
                                           <source class="video-source" :src="elem.videoSrc" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
                                         </video>
                                       </div>
                                     </template>
                                     <template v-for="elemImg in elem.sourceImage">
                                       <div class="swiper-slide">
-                                        <nuxt-img :src="elemImg" alt="Картинка проекта"/>
+                                        <nuxt-img quality="80" height="300" :src="elemImg" alt="Картинка проекта"/>
                                       </div>
                                     </template>
                                   </template>
@@ -114,7 +114,7 @@
 <script>
 import Modal from '/elements/modalElement.vue';
 import blockFooter from "/components/blockFooter.vue"
-import jsonData from "..../src/data.json";
+import jsonData from "../src/data.json";
 import Swiper from "swiper/bundle"
 
 import 'swiper/css';
@@ -199,7 +199,15 @@ export default {
     this.checkTheme()
     if (localStorage.getItem('theme-window') === "white-theme"){
       this.themeStorage = true;
-    }
+    };
+    useSeoMeta({
+      title: 'Проекты',
+      ogTitle: 'Альпина - Выполненые проекты',
+      description: 'Ознакомьтесь с нашими выполнеными проектами',
+      ogDescription: 'Ознакомьтесь с нашими выполнеными проектами',
+      ogImage: '/images/favicon.ico',
+      twitterCard: 'summary_large_image',
+    })
   },
 }
 </script>

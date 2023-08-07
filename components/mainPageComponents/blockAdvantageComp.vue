@@ -4,7 +4,7 @@
       <h2>Преимущества работы с нашей компанией</h2>
       <div class="elem-advantages">
         <div class="el">
-          <nuxt-img draggable="false" class="invert-img-white" src="../assets/images/ico-advantage-medal.svg" alt=""/>
+          <img draggable="false" class="invert-img-white" src="../../assets/images/ico-advantage-medal.svg" alt=""/>
           <div class="div-text">
             Даем гарантию <br>
             на работы <br>
@@ -13,7 +13,7 @@
           </div>
         </div>
         <div class="el">
-          <nuxt-img draggable="false" class="invert-img-white" src="../assets/images/ico-advantage-seti.svg" alt=""/>
+          <img draggable="false" class="invert-img-white" src="../../assets/images/ico-advantage-seti.svg" alt=""/>
           <div class="div-text">
             Являемся дилером <br>
             ведущих брендов <br>
@@ -22,7 +22,7 @@
           </div>
         </div>
         <div class="el">
-          <nuxt-img draggable="false" class="invert-img-white" src="../assets/images/ico-advantage-gears.svg" alt=""/>
+          <img draggable="false" class="invert-img-white" src="../../assets/images/ico-advantage-gears.svg" alt=""/>
           <div class="div-text">
             Собственный отдел <br>
             сервисного <br>
@@ -30,7 +30,7 @@
           </div>
         </div>
         <div class="el">
-          <nuxt-img draggable="false" class="invert-nuxt-img-white" src="../assets/images/ico-advantage-ruki.svg" alt=""/>
+          <img draggable="false" class="invert-nuxt-img-white" src="../../assets/images/ico-advantage-ruki.svg" alt=""/>
           <div class="div-text">
             Работаем с юридическими <br>
             и физическими лицами

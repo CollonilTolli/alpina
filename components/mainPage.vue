@@ -7,7 +7,7 @@
       <template v-for="(elem, index) in projData.projectsWithWork.projData">
         <div class="elem-modal-preview">
           <div class="div-img">
-            <nuxt-img draggable="false" :src="elem.sourceImage" alt=""/>
+            <nuxt-img draggable="false" width="400" height="250" :src="elem.sourceImage" alt=""/>
           </div>
           <div class="float-text">
             {{ elem.sourceName }}

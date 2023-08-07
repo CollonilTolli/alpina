@@ -5,7 +5,7 @@
         <div class="dt dt1">
           <div class="div-img">
             <a href="/">
-              <nuxt-img draggable="false" src="../assets/images/footer-text-logo.svg"  alt=""/>
+              <img draggable="false" src="../assets/images/footer-text-logo.svg"  alt=""/>
             </a>
           </div>
           <div class="div-text">
@@ -23,13 +23,13 @@
               </div>
               <a class="link-tel" href="tel:74822642200">
                 <div class="div-src">
-                  <nuxt-img draggable="false" src="../assets/images/ico-footer.svg" alt=""/>
+                  <img draggable="false" src="../assets/images/ico-footer.svg" alt=""/>
                   <div class="src-text">+7 (4822) 64-22-00</div>
                 </div>
               </a>
               <a href="mailto:klimat-tver@yandex.ru">
                 <div class="div-src">
-                    <nuxt-img draggable="false" src="../assets/images/ico-footer-3.svg" alt=""/>
+                    <img draggable="false" src="../assets/images/ico-footer-3.svg" alt=""/>
                     <div class="src-text">klimat-tver@yandex.ru</div>
                 </div>
               </a>

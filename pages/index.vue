@@ -1,5 +1,4 @@
 <template>
-  <!--  <router-view />-->
   <blockHeader @openModal="visibleModal"></blockHeader>
   <sliderHeader></sliderHeader>
   <blockFloatDotUp></blockFloatDotUp>
@@ -7,10 +6,11 @@
   <block2 @openModal="visibleModal"></block2>
   <block3 id="priemush-work"></block3>
   <blockFormCallbackPhone></blockFormCallbackPhone>
-  
+
   <blockSliderProjAccept id="objects-accept"></blockSliderProjAccept>
 
   <blockSliderDealers id="dealers-work"></blockSliderDealers>
+
   <blockReadyObjects id="block-contact"></blockReadyObjects>
   <blockModalEngeneer ref="modalVisible"></blockModalEngeneer>
   <blockFooter @openModal="visibleModal"></blockFooter>
@@ -75,5 +75,15 @@ export default {
   unmounted() {
     console.clear();
   },
+  mounted() {
+    useSeoMeta({
+      title: 'ООО Альпина',
+      ogTitle: 'Альпина - климатические системы',
+      description: 'специализируется в поставке, монтаже и сервисе систем вентиляции, кондиционирования, холодоснабжения и отопления для коммерческих и промышленных помещений. ',
+      ogDescription: 'специализируется в поставке, монтаже и сервисе систем вентиляции, кондиционирования, холодоснабжения и отопления для коммерческих и промышленных помещений. ',
+      ogImage: '/images/favicon.ico',
+      twitterCard: 'summary_large_image',
+    })
+  }
 };
 </script>

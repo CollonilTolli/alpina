@@ -38,14 +38,14 @@
               <div class="block-elem">
                 <div class="div-img">
                   <template v-if="elem.videoCover">
-                    <nuxt-img
+                    <img
                       draggable="false"
                       :src="elem.videoCover"
                       alt="Фотография обьекта"
                     />
                   </template>
                   <template v-else>
-                    <nuxt-img
+                    <img
                       draggable="false"
                       :src="elem.sourceImage[0]"
                       alt="Фотография обьекта"
@@ -60,7 +60,7 @@
                 </div>
                 <div class="div-link">
                   <a @click="showModal" class="btn btn-cube">Подбробнее</a>
-                  <div style="display: none !important">
+                 <!-- <div style="display: none !important">
                     <div class="dataContent">
                       <div class="slider-modal">
                         <div class="dt1">
@@ -85,7 +85,7 @@
                                 </template>
                                 <template v-for="elemImg in elem.sourceImage">
                                   <div class="swiper-slide">
-                                    <nuxt-img
+                                    <img
                                       :src="elemImg"
                                       alt="Картинка проекта"
                                     />
@@ -114,7 +114,7 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -136,7 +136,7 @@
     </div>
   </div>
 </template>
-<style lang="scss"></style>
+
 <script>
 import Modal from "./../../elements/modalElement.vue";
 

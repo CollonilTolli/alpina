@@ -5,7 +5,7 @@
       <div class="div-logo">
         <div class="div-img">
           <a href="/">
-            <nuxt-img class="invert-nuxt-img-white" draggable="false" src="../assets/images/footer-text-logo.svg"  alt=""/>
+            <img class="invert-nuxt-img-white" draggable="false" src="../assets/images/footer-text-logo.svg"  alt=""/>
           </a>
         </div>
         <div class="div-desc">
@@ -135,9 +135,17 @@ export default {
     },
   },
   mounted() {
-    if (localStorage.getItem('theme-window') === "white-theme"){
+    if (localStorage.getItem('theme-window') === "white-theme") {
       this.themeStorage = true;
-    }
+    };
+    useSeoMeta({
+      title: 'Пользовательское соглашение',
+      ogTitle: 'Альпина - Пользовательское соглашение',
+      description: 'Внимательно ознакомьтесь с пользовательским соглашением. ',
+      ogDescription: 'Внимательно ознакомьтесь с пользовательским соглашением',
+      ogImage: '/images/favicon.ico',
+      twitterCard: 'summary_large_image',
+    })
   }
 }
 </script>

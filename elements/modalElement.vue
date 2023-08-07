@@ -8,8 +8,8 @@
           data-backdrop="static"
           data-keyboard="false"
       >
-        <nuxt-img src="../assets/images/elems/ico-close-modal.svg" alt=""/>
-        <nuxt-img class="mobile-close" src="../assets/images/elems/ico-close-modal-adaptive.svg" alt=""/>
+        <img src="../assets/images/elems/ico-close-modal.svg" alt=""/>
+        <img class="mobile-close" src="../assets/images/elems/ico-close-modal-adaptive.svg" alt=""/>
       </button>
       <header class="modal-header">
         <slot name="header">
