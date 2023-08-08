@@ -33,7 +33,7 @@
           <template  v-for="elem in projecData.projectsWithWorkSlider.projData">
             <div class="accept-slider">
               <div class="block-elem">
-                <div class="div-img">
+                <div class="div-img" @click="showModal2">
                   <template v-if="elem.videoCover">
                     <img draggable="false" :src="elem.videoCover" alt="Фотография обьекта"/>
                   </template>
@@ -140,12 +140,19 @@ export default {
         document.querySelector('#modal-deal-cont #video-source-modal').setAttribute('autoplay','')
       }, 2000);
     },
+    showModal2() {
+      this.isModalVisible = true;
+      setTimeout(function () {
+        document.querySelector("#modal-deal-cont #video-source-modal").setAttribute("autoplay", "");
+      }, 2000);
+    },
     closeModal() {
       this.isModalVisible = false;
       document.querySelector('#modal-deal-cont').innerHTML = "";
     },
     starting(){
       const btnMass = document.querySelectorAll('.accept-slider .div-link .btn');
+      const btnMass2 = document.querySelectorAll(".accept-slider .div-img");
       btnMass.forEach(element => {
         element.addEventListener("click",function (){
           document.querySelector('#modal-deal-cont').innerHTML = "";
@@ -158,6 +165,18 @@ export default {
           });
         })
       })
+      btnMass2.forEach((element) => {
+        element.addEventListener("click", function () {
+          document.querySelector("#modal-deal-cont").innerHTML = "";
+          document.querySelector("#modal-deal-cont").prepend(this.nextSibling.lastChild.lastChild.firstChild.cloneNode(true));
+          const swiperTime = new Swiper(".swiper-modal", {
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          });
+        });
+      });
       const swiper = new Swiper('.swiper', {
       });
     },

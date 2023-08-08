@@ -1232,7 +1232,7 @@ abbr {
   right: 5px !important;
 
   &:after {
-    content: "";
+    content: "" !important;
   }
 }
 
@@ -1241,7 +1241,7 @@ abbr {
   left: 5px !important;
 
   &:after {
-    content: "";
+    content: "" !important;
   }
 }
 

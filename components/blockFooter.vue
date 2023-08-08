@@ -39,23 +39,23 @@
                 МЕНЮ
               </div>
               <div class="div-els-2">
-                <a @click="$emit('openModal')">
+                <a href="/#projectMontageForm">
                   <div class="div-text">
                     Вызвать инженера
                   </div>
                 </a>
-                <a class="link-dealers-work-footer">
+                <a href="/#dealers-work" class="link-dealers-work-footer">
                   <div class="div-text">
                     Мы - дилеры
                   </div>
                 </a>
               </div>
-              <a class="link-proc-work-footer">
+              <a href="/#process-work" class="link-proc-work-footer">
                 <div class="div-text">
                   Процесс работы
                 </div>
               </a>
-              <a class="link-obj-work-footer">
+              <a href="/#objects-accept" class="link-obj-work-footer">
                 <div class="div-text">
                   Объекты
                 </div>
@@ -76,5 +76,4 @@
   </div>
 </template>
 <script>
-
 </script>

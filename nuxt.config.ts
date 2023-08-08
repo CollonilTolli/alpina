@@ -36,7 +36,7 @@ export default {
         implementation: require("sass"),
       },
     },
-    buildModules: ["@nuxtjs/style-resources"],
+    buildModules: ["@nuxtjs/style-resources", '@nuxt/image'],
     styleResources: {
       scss: ["@/assets/css/main.scss"],
     },

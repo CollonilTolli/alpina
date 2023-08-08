@@ -17,7 +17,7 @@
               <swiper
                   :modules="modules"
                   :slides-per-view="4"
-                  :space-between="34"
+                  :space-between="20"
                   navigation
                   :loop="true"
                   rewind="true"
@@ -39,7 +39,7 @@
           },
           '1440': {
             slidesPerView: 4,
-            spaceBetween: 50,
+            spaceBetween: 30,
           },
         }"
               >
@@ -47,7 +47,7 @@
                   <swiper-slide>
                     <div class="accept-slider">
                       <div class="block-elem">
-                        <div class="div-img">
+                        <div class="div-img" @click="showModal2">
                           <template v-if="elem.videoCover">
                             <img
                                 draggable="false"
@@ -259,9 +259,13 @@ export default {
     showModal() {
       this.isModalVisible = true;
       setTimeout(function () {
-        document
-            .querySelector("#modal-objects #video-source-modal")
-            .setAttribute("autoplay", "");
+        document.querySelector("#modal-objects #video-source-modal").setAttribute("autoplay", "");
+      }, 2000);
+    },
+    showModal2() {
+      this.isModalVisible = true;
+      setTimeout(function () {
+        document.querySelector("#modal-objects #video-source-modal").setAttribute("autoplay", "");
       }, 2000);
     },
     closeModal() {
@@ -269,15 +273,26 @@ export default {
       document.querySelector("#modal-objects").innerHTML = "";
     },
     starting() {
-      const btnMass = document.querySelectorAll(
-          ".accept-slider .div-link .btn"
-      );
+      const btnMass = document.querySelectorAll(".accept-slider .div-link .btn");
+      const btnMass2 = document.querySelectorAll(".accept-slider .div-img");
       btnMass.forEach((element) => {
         element.addEventListener("click", function () {
           document.querySelector("#modal-objects").innerHTML = "";
-          document
-              .querySelector("#modal-objects")
-              .prepend(this.nextSibling.firstChild.cloneNode(true));
+          document.querySelector("#modal-objects").prepend(this.nextSibling.firstChild.cloneNode(true));
+          const swiperTime = new Swiper2(".swiper-modal", {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          });
+        });
+      });
+      btnMass2.forEach((element) => {
+        element.addEventListener("click", function () {
+          document.querySelector("#modal-objects").innerHTML = "";
+          document.querySelector("#modal-objects").prepend(this.nextSibling.nextSibling.nextSibling.lastChild.lastChild.firstChild.cloneNode(true));
           const swiperTime = new Swiper2(".swiper-modal", {
             slidesPerView: 1,
             slidesPerGroup: 1,

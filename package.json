@@ -21,6 +21,7 @@
     "@nuxt/image": "^0.7.1",
     "@nuxt/image-edge": "^1.0.0-rc.1-28180077.d51e794",
     "@nuxt/kit": "^3.6.5",
+    "ipx": "^1.2.0",
     "nuxt-swiper": "^1.2.0",
     "sharp": "^0.32.4",
     "swiper": "8.0.0"
