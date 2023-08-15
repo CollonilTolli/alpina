@@ -51,27 +51,26 @@
                   <swiper-slide>
                     <div class="accept-slider">
                       <div class="block-elem">
-                        <div
-                          class="div-img"
-                          :class="elem.previewImage"
-                          @click="
+                        <div class="div-img">
+                          <client-only>
+                            <nuxt-img
+                              quality="80"
+                              height="300"
+                              draggable="false"
+                              :src="
+                                elem.previewImage === elem.sourceImage[0] &&
+                                elem.previewImage
+                              "
+                              @click="
                             () => {
                               this.elemModal = projecData.projData[index];
                               showModal();
                               console.log(elem);
                             }
                           "
-                        >
-                          <nuxt-img
-                            quality="80"
-                            height="300"
-                            draggable="false"
-                            :src="
-                              elem.previewImage === elem.sourceImage[0] &&
-                              elem.previewImage
-                            "
-                            alt="Фотография обьекта"
-                          />
+                              alt="Фотография обьекта"
+                            />
+                          </client-only>
                         </div>
                         <div class="title-text">
                           {{ elem.sourceName }}
@@ -117,12 +116,14 @@
                         <div class="swiper-wrapper">
                           <template v-for="elemImg in elemModal.sourceImage">
                             <div class="swiper-slide">
-                              <nuxt-img
-                                :src="elemImg"
-                                quality="80"
-                                height="300"
-                                alt="Картинка проекта"
-                              />
+                              <client-only>
+                                <nuxt-img
+                                  :src="elemImg"
+                                  quality="80"
+                                  height="300"
+                                  alt="Картинка проекта"
+                                />
+                              </client-only>
                             </div>
                           </template>
                         </div>

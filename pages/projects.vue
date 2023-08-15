@@ -30,10 +30,10 @@
     <div class="container">
       <div class="block-accept-elem-slider block-acc-slider2" :class="{ 'version-row': versionClass == 'version-row'}">
         <div class="items-cont">
-          <template  v-for="(elem, index) in projecData.projectsWithWorkSlider.projData">
+          <template  v-for="(elem, index) in projecData.projData">
             <div class="accept-slider">
               <div class="block-elem">
-                <div class="div-img" @click="()=>{ this.elemModal = projecData.projectsWithWorkSlider.projData[index] ;showModal(); }">
+                <div class="div-img" @click="()=>{ this.elemModal = projecData.projData[index] ;showModal(); }">
                     <nuxt-img draggable="false" width="300" height="300" :src="elem.sourceImage[0]" alt="Фотография обьекта"/>
                 </div>
                 <div class="div-data">

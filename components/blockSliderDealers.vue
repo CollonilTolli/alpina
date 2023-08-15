@@ -49,20 +49,24 @@
                   <div class="dealer-slider">
                     <div class="block-elem listener-click" @click="showModal">
                       <div class="div-img">
-                        <img
-                          width="187"
-                          quality="80"
-                          fit="contain"
-                          draggable="false"
-                          :src="elem.sourceImage"
-                          alt="Фотография дилера"
-                        />
+                        <client-only>
+                          <nuxt-img
+                            width="187"
+                            quality="80"
+                            fit="contain"
+                            draggable="false"
+                            :src="elem.sourceImage"
+                            alt="Фотография дилера"
+                          />
+                        </client-only>
                       </div>
                       <div style="display: none !important">
                         <div class="dataContent">
-                          <div class="block-img">
-                            <nuxt-img :src="elem.sourceSrc" alt="" />
-                          </div>
+                          <client-only>
+                            <div class="block-img">
+                              <nuxt-img :src="elem.sourceSrc" alt="" />
+                            </div>
+                          </client-only>
                           <div class="block-title 2">
                             <h1>{{ elem.sourceTitle }}</h1>
                           </div>
