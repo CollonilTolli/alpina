@@ -43,91 +43,26 @@
           },
         }"
               >
-                <template v-for="elem in projecData.projectsWithWorkSlider.projData">
+                <template v-for="(elem, index) in projecData.projectsWithWorkSlider.projData">
                   <swiper-slide>
                     <div class="accept-slider">
                       <div class="block-elem">
-                        <div class="div-img" @click="showModal2">
-                          <template v-if="elem.videoCover">
-                            <img
-                                draggable="false"
-                                :src="elem.videoCover"
-                                alt="Фотография обьекта"
-                            />
-                          </template>
-                          <template v-else>
-                            <nuxt-img
-                                quality="80" height="300"
-                                draggable="false"
-                                :src="elem.sourceImage[0]"
-                                alt="Фотография обьекта"
-                            />
-                          </template>
+                        <div class="div-img" @click="()=>{ this.elemModal = projecData.projectsWithWorkSlider.projData[index] ;showModal(); }">
+                          <nuxt-img
+                              quality="80" height="300"
+                              draggable="false"
+                              :src="elem.sourceImage[0]"
+                              alt="Фотография обьекта"
+                          />
                         </div>
                         <div class="title-text">
                           {{ elem.sourceName }}
                         </div>
                         <div class="title-desc">
-                          {{ elem.shortDesc }}
+                          {{ elem.specDesc }}
                         </div>
                         <div class="div-link">
-                          <a @click="showModal" class="btn btn-cube">Подбробнее</a>
-                          <div style="display: none !important">
-                             <div class="dataContent">
-                               <div class="slider-modal">
-                                 <div class="dt1">
-                                   <div class="block-img">
-                                     <div class="swiper swiper-modal">
-                                       <div class="swiper-wrapper">
-                                         <template v-if="elem.isVideo">
-                                           <div class="swiper-slide">
-                                             <video
-                                               class="fone-video"
-                                               id="video-source-modal"
-                                               controls="controls"
-                                               loop
-                                             >
-                                               <source
-                                                 class="video-source"
-                                                 :src="elem.videoSrc"
-                                                 type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
-                                               />
-                                             </video>
-                                           </div>
-                                         </template>
-                                         <template v-for="elemImg in elem.sourceImage">
-                                           <div class="swiper-slide">
-                                             <nuxt-img
-                                               :src="elemImg"
-                                               quality="80" height="300"
-                                               alt="Картинка проекта"
-                                             />
-                                           </div>
-                                         </template>
-                                       </div>
-                                       <a
-                                         class="swiper-button-prev swiper-button-prev2"
-                                       ></a>
-                                       <a
-                                         class="swiper-button-next swiper-button-next2"
-                                       ></a>
-                                     </div>
-                                   </div>
-                                 </div>
-                                 <div class="dt2">
-                                   <div class="block-title">
-                                     <h1>{{ elem.sourceName }}</h1>
-                                   </div>
-                                   <div class="block-desc">
-                                     {{ elem.shortDesc }}
-                                   </div>
-                                   <div class="full-desc">
-                                     {{ elem.completeWork }}
-                                   </div>
-                                 </div>
-                               </div>
-                             </div>
-                           </div>
+                          <a @click="()=>{ this.elemModal = projecData.projectsWithWorkSlider.projData[index] ;showModal(); }" class="btn btn-cube">Подбробнее</a>
                         </div>
                       </div>
                     </div>
@@ -136,23 +71,58 @@
                   <div class="swiper-button-next"></div>
                 </template>
               </swiper>
-
-              <div v-show="isModalVisible">
-                <Modal
-                    @close="closeModal"
-                    class="modal-no-header modal-no-footer modal-projects"
-                >
-                  <template v-slot:body>
-                    <div id="modal-objects"></div>
-                  </template>
-                </Modal>
-              </div>
-            </div>
-
-
-
           </div>
         </div>
+        </div>
+      </div>
+      <div v-show="isModalVisible">
+        <Modal
+            @close="closeModal"
+            class="modal-no-header modal-no-footer modal-projects"
+        >
+          <template v-slot:body>
+            <template v-if="elemModal !== undefined">
+            <div id="modal-objects">
+              <div class="slider-modal">
+                <div class="dt1">
+                  <div class="block-img">
+                    <div class="swiper swiper-modal">
+                      <div class="swiper-wrapper">
+                        <template v-for="elemImg in elemModal.sourceImage">
+                          <div class="swiper-slide">
+                            <nuxt-img
+                                :src="elemImg"
+                                quality="80" height="300"
+                                alt="Картинка проекта"
+                            />
+                          </div>
+                        </template>
+                      </div>
+                      <a
+                          class="swiper-button-prev swiper-button-prev2"
+                      ></a>
+                      <a
+                          class="swiper-button-next swiper-button-next2"
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="dt2">
+                  <div class="block-title">
+                    <h1 class="mb0">{{ elemModal.sourceName }}</h1>
+                  </div>
+                  <div class="block-desc">
+                    {{ elemModal.shortDesc }}
+                  </div>
+                  <div class="full-desc">
+                    {{ elemModal.completeWork }}
+                  </div>
+                </div>
+              </div>
+            </div>
+            </template>
+          </template>
+        </Modal>
       </div>
     </div>
   </div>
@@ -181,6 +151,7 @@ export default {
     return {
       projecData: jsonData,
       isModalVisible: false,
+      elemModal: {},
       swiperOptions: {
         breakpoints: {
           320: {
@@ -258,27 +229,21 @@ export default {
     },
     showModal() {
       this.isModalVisible = true;
-      setTimeout(function () {
-        document.querySelector("#modal-objects #video-source-modal").setAttribute("autoplay", "");
-      }, 2000);
     },
     showModal2() {
       this.isModalVisible = true;
-      setTimeout(function () {
-        document.querySelector("#modal-objects #video-source-modal").setAttribute("autoplay", "");
-      }, 2000);
     },
     closeModal() {
       this.isModalVisible = false;
-      document.querySelector("#modal-objects").innerHTML = "";
+      this.elemModal = {};
     },
     starting() {
       const btnMass = document.querySelectorAll(".accept-slider .div-link .btn");
       const btnMass2 = document.querySelectorAll(".accept-slider .div-img");
       btnMass.forEach((element) => {
         element.addEventListener("click", function () {
-          document.querySelector("#modal-objects").innerHTML = "";
-          document.querySelector("#modal-objects").prepend(this.nextSibling.firstChild.cloneNode(true));
+          // document.querySelector("#modal-objects").innerHTML = "";
+          // document.querySelector("#modal-objects").prepend(this.nextSibling.firstChild.cloneNode(true));
           const swiperTime = new Swiper2(".swiper-modal", {
             slidesPerView: 1,
             slidesPerGroup: 1,
@@ -291,8 +256,8 @@ export default {
       });
       btnMass2.forEach((element) => {
         element.addEventListener("click", function () {
-          document.querySelector("#modal-objects").innerHTML = "";
-          document.querySelector("#modal-objects").prepend(this.nextSibling.nextSibling.nextSibling.lastChild.lastChild.firstChild.cloneNode(true));
+          // document.querySelector("#modal-objects").innerHTML = "";
+          // document.querySelector("#modal-objects").prepend(this.nextSibling.nextSibling.nextSibling.lastChild.lastChild.firstChild.cloneNode(true));
           const swiperTime = new Swiper2(".swiper-modal", {
             slidesPerView: 1,
             slidesPerGroup: 1,

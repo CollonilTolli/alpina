@@ -60,7 +60,7 @@
                             <div class="block-img">
                               <nuxt-img  :src="elem.sourceSrc" alt="" />
                             </div>
-                            <div class="block-title">
+                            <div class="block-title 2">
                               <h1>{{ elem.sourceTitle }}</h1>
                             </div>
                             <div class="block-desc">

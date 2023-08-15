@@ -37,20 +37,11 @@
             <div class="accept-slider">
               <div class="block-elem">
                 <div class="div-img">
-                  <template v-if="elem.videoCover">
-                    <img
-                      draggable="false"
-                      :src="elem.videoCover"
-                      alt="Фотография обьекта"
-                    />
-                  </template>
-                  <template v-else>
-                    <img
-                      draggable="false"
-                      :src="elem.sourceImage[0]"
-                      alt="Фотография обьекта"
-                    />
-                  </template>
+                  <img
+                    draggable="false"
+                    :src="elem.sourceImage[0]"
+                    alt="Фотография обьекта"
+                  />
                 </div>
                 <div class="title-text">
                   {{ elem.sourceName }}
