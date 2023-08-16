@@ -50,7 +50,7 @@
                   {{ elem.shortDesc }}
                 </div>
                 <div class="div-link">
-                  <a @click="showModal" class="btn btn-cube">Подбробнее</a>
+                  <a @click="showModal" class="btn btn-cube">Подробнее</a>
                  <!-- <div style="display: none !important">
                     <div class="dataContent">
                       <div class="slider-modal">

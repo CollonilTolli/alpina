@@ -44,7 +44,7 @@
                     {{ elem.specDesc }}
                   </div>
                   <div class="div-link">
-                    <a @click="()=>{ this.elemModal = projecData.projectsWithWorkSlider.projData[index] ;showModal(); }" class="btn btn-cube">Подбробнее</a>
+                    <a @click="()=>{ this.elemModal = projecData.projData[index] ;showModal(); }" class="btn btn-cube">Подробнее</a>
                   </div>
                 </div>
               </div>
